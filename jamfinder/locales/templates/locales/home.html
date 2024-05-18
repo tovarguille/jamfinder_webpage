@@ -1,0 +1,23 @@
+{% extends 'locales/base.html' %}
+
+{% block title %}Rehearsal Rooms in Madrid{% endblock %}
+
+{% block content %}
+    <h1>Rehearsal Rooms in Madrid</h1>
+    <nav>
+        <a href="{% url 'register' %}">Register</a>
+        <a href="{% url 'login' %}">Login</a>
+    </nav>
+    <div id="locales">
+        {% for local in locales %}
+            <div class="local-card">
+                <h2><a href="{% url 'local_detail' local.id %}">{{ local.name }}</a></h2>
+                <p>{{ local.address }}</p>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+
+
+

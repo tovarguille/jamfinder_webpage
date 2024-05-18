@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}JamFinder{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <script src="{% static 'js/dropdown.js' %}" defer></script>
+</head>
+<body>
+    <header>
+        <div class="title">
+            <a href="{% url 'home' %}" style="color: white; text-decoration: none;">JamFinder</a>
+        </div>
+        <div class="user-info">
+            {% if user.is_authenticated %}
+                <img src="{% static 'img/admin_icon.png' %}" alt="Admin Icon">
+                <span>
+                    {% if user.is_superuser %}
+                        {{ user.username }} (Admin)
+                    {% else %}
+                        {{ user.username }}
+                    {% endif %}
+                </span>
+                <div class="dropdown">
+                    <a href="{% url 'logout' %}">Logout</a>
+                </div>
+            {% else %}
+                <img src="{% static 'img/user_icon.png' %}" alt="User Icon">
+                <div class="dropdown">
+                    <a href="{% url 'login' %}">Login</a>
+                </div>
+            {% endif %}
+        </div>
+    </header>
+    {% block content %}{% endblock %}
+</body>
+</html>
+
+
+
+
+                    
+
+    

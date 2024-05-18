@@ -1,0 +1,21 @@
+{% extends 'locales/base.html' %}
+
+{% block title %}Local Detail{% endblock %}
+
+{% block content %}
+    <div class="local-detail">
+        <div class="local-detail-card">
+            <h2>{{ local.name }}</h2>
+            <p><strong>Type of Studio:</strong> {{ local.type_of_studio }}</p>
+            <p><strong>Address:</strong> {{ local.address }}</p>
+            <p><strong>Opening Hours:</strong> {{ local.opening_hours }}</p>
+            <p><strong>Price:</strong> {{ local.price }}</p>
+            <p><strong>Services:</strong> {{ local.services }}</p>
+            <p><strong>Phone Number:</strong> {{ local.phone_number }}</p>
+        </div>
+    </div>
+{% endblock %}
+
+
+
+
