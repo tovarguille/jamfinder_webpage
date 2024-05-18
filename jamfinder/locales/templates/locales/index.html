@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locales de Ensayo en Madrid</title>
+    {% load static %}
+</head>
+<body>
+    <h1>Locales de Ensayo en Madrid</h1>
+    <nav>
+        <a href="{% url 'register' %}">Registrarse</a>
+        <a href="{% url 'login' %}">Iniciar Sesión</a>
+    </nav>
+    <div id="locales"></div>
+    <script src="{% static 'js/index.js' %}"></script>
+</body>
+</html>
+
+
+
+
+
+
